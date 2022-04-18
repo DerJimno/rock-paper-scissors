@@ -7,46 +7,39 @@ function computerPlay(){
         else
             return "Scissors";
 }
-
-
 let cpuScore = 0
 let playerScore = 0
-
-
 function roundResult(computerSelection, playerSelection){
         
     if (computerSelection.toLowerCase() === playerSelection.toLowerCase())
-        return `Same brain! You both chose ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()}`;
+        return `it's a tie! both of you chose: ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()}, try again`;
     else if (computerSelection.toLowerCase() === "rock" && playerSelection.toLowerCase() === "scissors"){
-        cWinner = "You lose, Rock beats Scissors";
+        cWinner = "You lose, Rock breaks Scissors";
         cpuScore++;
         return cWinner}
     else if (computerSelection.toLowerCase() === "scissors" && playerSelection.toLowerCase() === "paper"){
-        cWinner = `You lose, Scissors beat Paper`;
+        cWinner = `You lose, Scissors cuts Paper`;
         cpuScore++;
         return cWinner}
     else if (computerSelection.toLowerCase() === "paper" && playerSelection.toLowerCase() === "rock"){
-        cWinner = `You lose, Paper beats Rock`;
+        cWinner = `You lose, Paper covers Rock`;
         cpuScore++;
         return cWinner}
     else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors"){
-        pWinner = `You win, Rock beats Scissors`;
+        pWinner = `You win, Rock breaks Scissors`;
         playerScore++;
         return pWinner}
     else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "paper"){
-        pWinner = `You win, Scissors beat Paper`;
+        pWinner = `You win, Scissors cuts Paper`;
         playerScore++;
         return pWinner}
     else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock"){
-        pWinner= `You win, Paper beats Rock`;
+        pWinner= `You win, Paper covers Rock`;
         playerScore++;
         return pWinner}
     else 
     return 'What the Heck did you just chose!';   
 }
-
-
-
 function game(){
     for (let i = 0; i < Infinity; i++) {
         const computerSelection = computerPlay();
@@ -55,15 +48,13 @@ function game(){
             return "Okay, maybe next time";
         }
         alert(roundResult(computerSelection , playerSelection));
-      
         if (cpuScore === 5){
         break;   
     }
         else if (playerScore === 5){
-        break; 
+        break;
     }
 }
-
     if (cpuScore === 5)
     return `Cpu wins, Cpu: ${cpuScore}, You:  ${playerScore}`
     else if (playerScore === 5)
