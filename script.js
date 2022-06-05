@@ -7,59 +7,83 @@ function computerPlay(){
         else
             return "Scissors";
 }
+
 let cpuScore = 0
 let playerScore = 0
-function roundResult(computerSelection, playerSelection){
-        
-    if (computerSelection.toLowerCase() === playerSelection.toLowerCase())
-        return `it's a tie! both of you chose: ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()}, try again`;
+
+function roundResult(computerSelection, playerSelection) {
+
+    const score = document.querySelector('#score')
+
+    if (computerSelection.toLowerCase() === playerSelection.toLowerCase()) {
+        score.textContent = "{{{it's a tie}}}";}
     else if (computerSelection.toLowerCase() === "rock" && playerSelection.toLowerCase() === "scissors"){
-        cWinner = "You lose, Rock breaks Scissors";
         cpuScore++;
-        return cWinner}
+        score.textContent = "{{{You lost, your Scissors suck}}}";}
     else if (computerSelection.toLowerCase() === "scissors" && playerSelection.toLowerCase() === "paper"){
-        cWinner = `You lose, Scissors cuts Paper`;
         cpuScore++;
-        return cWinner}
+        score.textContent = "{{{You lost, Paper is just Paper}}}";}
     else if (computerSelection.toLowerCase() === "paper" && playerSelection.toLowerCase() === "rock"){
-        cWinner = `You lose, Paper covers Rock`;
         cpuScore++;
-        return cWinner}
+        score.textContent = '{{{You lose, who said "rock-solid"?!}}}';}
     else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors"){
-        pWinner = `You win, Rock breaks Scissors`;
         playerScore++;
-        return pWinner}
+        score.textContent = "{{{You won, broke those Scissors}}}";}
     else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "paper"){
-        pWinner = `You win, Scissors cuts Paper`;
         playerScore++;
-        return pWinner}
+        score.textContent = "{{{You win, cut it Baby}}}";}
     else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock"){
-        pWinner= `You win, Paper covers Rock`;
         playerScore++;
-        return pWinner}
-    else 
-    return 'What the Heck did you just chose!';   
+        score.textContent = "{{{You win, Paper is key! }}}";}
 }
-function game(){
-    for (let i = 0; i < Infinity; i++) {
-        const computerSelection = computerPlay();
-        const playerSelection = prompt("Please choose one: Rock, Paper or Scissors", "Rock, Paper or Scissors");
-        if (playerSelection === null) {
-            return "Okay, maybe next time";
-        }
-        alert(roundResult(computerSelection , playerSelection));
-        if (cpuScore === 5){
-        break;   
+
+
+
+const imgs = document.querySelectorAll('img')
+
+imgs.forEach((img) => {
+    img.addEventListener("click", e => {
+    playerSelection = img.id
+
+    const computerSelection = computerPlay()
+    const choose = document.querySelector('.explanation')
+    choose.textContent=`You chose ${playerSelection}, the Cpu chose ${computerSelection}!`
+
+roundResult(computerSelection, playerSelection)
+
+const computerScore = document.querySelector('.computerScore')
+const youScore = document.querySelector('.youScore')
+computerScore.textContent = `${cpuScore}`
+youScore.textContent = `${playerScore}`
+
+    youScore.style = "color: green ; transition: 1.7s;"
+    computerScore.style = "color: red; transition: 1.7s;"
+    if (cpuScore + playerScore === 0 ) {
+        youScore.style = "color: rgb(207, 132, 132);"
+        computerScore.style = "color: rgb(207, 132, 132)"
     }
-        else if (playerScore === 5){
-        break;
-    }
+function reloadButton() {
+    const reloadBtn = document.querySelector('#reloadBtn')
+    const selections = document.querySelectorAll('.selection')
+    reloadBtn.style = "visibility: visible; transition: 300ms;"
+    selections.forEach((selection) => {
+        selection.style = "visibility: hidden;"
+    })
+ }
+        
+if (cpuScore === 5){
+    score.textContent = " Game Over, Loser 😛 ";
+    computerScore.style = "transform: scale(1.5); transition: 160ms; color: red; "
+    score.style = "transform: scale(1.5); transition: 160ms ; "
+    reloadButton()
 }
-    if (cpuScore === 5)
-    return `Cpu wins, Cpu: ${cpuScore}, You:  ${playerScore}`
-    else if (playerScore === 5)
-    return `You win, You: ${playerScore}, Cpu:  ${cpuScore}`
-    else
-    return ""   
-}
-alert(game())
+else if (playerScore === 5){
+    score.textContent = " We have a winner 👌 ";
+    youScore.style = "transform: scale(1.5); transition: 160ms; color: green; "
+    score.style = "transform: scale(1.5); transition: 160ms ; "
+    reloadButton()
+};    
+
+
+    }) 
+    })

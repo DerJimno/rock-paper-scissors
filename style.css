@@ -1,0 +1,192 @@
+html,
+body {
+    margin: 0;
+    background-image: url("webimage.jpg") ;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family:  Garamond,  fantasy;
+    color: rgb(77, 74, 74);
+    color: rgb(207, 132, 132);
+    font-size: 2.7rem;
+    margin-bottom: 0%;
+}
+
+.selections {
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px ;
+    padding-top: 10px;
+    position: relative;
+    
+}
+.selection {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 140ms;
+    padding: 10px 30px;
+    width: 10rem;
+    flex-wrap: wrap;
+
+}
+.selection:hover {
+   transform: scale(1.2);
+}
+
+
+
+
+
+
+
+.ycScore {
+    display: flex;
+    justify-content: center; 
+}
+.you, .computer {
+    display: flex;
+    color: grey;
+    font-weight: 600;
+    font-size: 2.3rem;
+    padding: 0 50px;
+}
+.youScore, .computerScore {
+    display: flex;
+    justify-content: center;
+    color: rgb(207, 132, 132);
+    font-size: 1.9rem;
+    padding: 0 50px;
+}
+.rules {
+
+    display: flex;
+    justify-content: center;
+    font-family:  Garamond,  fantasy;
+    color: rgb(77, 74, 74);
+    font-size: 1.7rem;
+    margin-bottom: 0%;
+}
+.explanation {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    font-size: 1.8rem;
+    font-family: serif;
+}
+
+.btnPos {
+    display: flex;
+    justify-content: center;
+}
+#reloadBtn {
+    width: 37rem;
+    height: 15rem;
+    cursor: pointer;
+    position: absolute;
+    visibility: hidden;
+    top: 85px;
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 3rem;
+        padding-bottom: 2rem;
+    }
+    #reloadBtn {
+        padding-bottom: 5rem;
+    }
+    .selections .selection {
+        width: 7rem;
+    }
+    .selections {
+        padding: 0 0 0 0;
+    }
+    .selection {
+        padding: 10px 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    #reloadBtn {
+        width: 28rem;
+        height: 13rem ;
+        top: 95px;
+    }
+    .selections .selection {
+        width: 6.8rem;
+    }
+    h1 {
+        font-size: 3rem;
+        padding-bottom: 2rem;
+    }
+    .selection {
+        padding: 8px 20px;
+    }
+}
+@media (max-width: 450px) {
+    #reloadBtn {
+        width: 25rem;
+        height: 11rem ;
+        top: 95px;  
+    }
+    .selections .selection {
+        width: 5.9rem;
+    }
+    .you, .computer     {
+        padding: 0 15px;
+        padding-top: 25px;
+    }
+    .youScore, .computerScore {
+        padding: 0 15px;
+    }
+    #score {
+        font-size: 1.3rem;
+    }
+}
+@media (max-width: 400px) {
+    #reloadBtn {
+        width: 24rem;
+        height: 10rem ;
+        top: 95px;  
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .selections .selection {
+        width: 4.9rem;
+    }
+    .you, .computer {
+    font-size: 1.9rem;
+
+    }
+}
+@media (max-width: 382px) {
+    .selections .selection {
+        padding: 5px 15px;
+    }
+    #score {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 350px) {
+    #reloadBtn {
+        width: 22rem;
+        height: 8.5rem ;
+        top: 95px;  
+    }
+}
+@media (max-width: 850px) {
+    .explanation {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-left: 2rem;
+        font-size: 1.1rem;
+        
+    }
+}

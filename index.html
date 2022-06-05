@@ -1,13 +1,43 @@
-<!DOCTYPE = html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rock-paper-scissors</title>
+    <script src="script.js" defer ></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<script src="script.js" ></script>
 
 
+<h1> Choose One</h1>
+<div class="selections">
+        <img src="icons/rock.png" class="selection" id="Rock" >
+        <img src="icons/paper.png" class="selection" id="Paper">
+        <img src="icons/scissors.png" class="selection" id="Scissors">
+</div>
+
+
+<div class="ycScore">
+    <div>
+        <p class="you">You</p>
+        <p class="youScore">0</p>
+    </div>
+   
+    <div>
+        <p class="computer"> Cpu</p>
+        <p class="computerScore">0</p>
+    </div> 
+</div>
+    <div class="rules" id="score" >rules:</div>
+        <div class="explanation">  
+            <div>Rock beats Scissors︱</div>
+            <div>Scissors cut Paper ︱</div>
+            <div> Paper covers Rock ︱</div>
+        </div>    
+    
+<div class="btnPos">
+<img onclick="window.location.reload();" id="reloadBtn" src="icons/playAgain.png"  alt="playAgain" >
+</div>
 </body>
 </html>
