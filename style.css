@@ -1,7 +1,7 @@
 html,
 body {
     margin: 0;
-    background-image: url("webimage.jpg") ;
+    background-image: url("icons/webimage.jpg") ;
 }
 
 h1 {
@@ -32,7 +32,7 @@ h1 {
     padding: 10px 30px;
     width: 10rem;
     flex-wrap: wrap;
-
+    -webkit-tap-highlight-color: transparent;
 }
 .selection:hover {
    transform: scale(1.2);
@@ -91,6 +91,23 @@ h1 {
     visibility: hidden;
     top: 85px;
 }
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    }
+.socialMedia:hover {
+    filter: opacity(0.5) drop-shadow(0 0 0 rgb(247, 160, 255));
+}
+
+a {
+    padding-left: 10px;
+}
+
+
 
 @media (max-width: 800px) {
     h1 {
@@ -98,10 +115,12 @@ h1 {
         padding-bottom: 2rem;
     }
     #reloadBtn {
-        padding-bottom: 5rem;
+        margin-top: 0.7rem;
+        height: 13.5rem ;
     }
     .selections .selection {
-        width: 7rem;
+        width: 17%;
+        height: 17%;
     }
     .selections {
         padding: 0 0 0 0;
@@ -114,11 +133,12 @@ h1 {
 @media (max-width: 600px) {
     #reloadBtn {
         width: 28rem;
-        height: 13rem ;
-        top: 95px;
+        height: 11rem ;
+        top: 87px;
     }
     .selections .selection {
-        width: 6.8rem;
+        width: 16%;
+        height: 16%;
     }
     h1 {
         font-size: 3rem;
@@ -132,10 +152,11 @@ h1 {
     #reloadBtn {
         width: 25rem;
         height: 11rem ;
-        top: 95px;  
+        top: 84px;  
     }
     .selections .selection {
-        width: 5.9rem;
+        width: 15%;
+        height: 15%;
     }
     .you, .computer     {
         padding: 0 15px;
@@ -150,15 +171,16 @@ h1 {
 }
 @media (max-width: 400px) {
     #reloadBtn {
-        width: 24rem;
-        height: 10rem ;
-        top: 95px;  
+        width: 21rem;
+        height: 9rem ;
+        top: 80px;  
     }
     h1 {
         font-size: 2.5rem;
     }
     .selections .selection {
-        width: 4.9rem;
+        width: 14%;
+        height: 14%;
     }
     .you, .computer {
     font-size: 1.9rem;
@@ -175,10 +197,17 @@ h1 {
 }
 @media (max-width: 350px) {
     #reloadBtn {
-        width: 22rem;
-        height: 8.5rem ;
-        top: 95px;  
-    }
+        width: 19rem;
+        height: 8rem ;
+        top: 75px;  
+}
+}
+    @media (max-width: 300px) {
+        #reloadBtn {
+            width: 16rem;
+            height: 7rem ;
+            top: 75px;  
+        }
 }
 @media (max-width: 850px) {
     .explanation {
