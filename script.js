@@ -56,7 +56,7 @@ function roundResult(computerSelection, playerSelection) {
 
 
 
-const imgs = document.querySelectorAll('img')
+const imgs = document.querySelectorAll('.selection')
 
 imgs.forEach((img) => {
     img.addEventListener("click", e => {
