@@ -93,6 +93,7 @@ if (cpuScore === 5){
     computerScore.style = "transform: scale(1.5); transition: 160ms; color: red; ";
     score.style = "transform: scale(1.5); transition: 160ms ; ";
     reloadButton()
+        
     
 }
 else if (playerScore === 5){
@@ -100,9 +101,8 @@ else if (playerScore === 5){
     youScore.style = "transform: scale(1.5); transition: 160ms; color: green; ";
     score.style = "transform: scale(1.5); transition: 160ms; ";
     reloadButton()
-    
-};    
-
+        
+}
 const youChoice = document.querySelector(".youChoice")
  if (img.id === "Paper") {
      youChoice.src = "icons/paper.png"
@@ -125,5 +125,33 @@ const cpuChoice = document.querySelector(".cpuChoice")
      cpuChoice.src = "icons/scissors.png"
  }
 
-    }) 
-    })
+ const audios = document.querySelectorAll('audio')
+        audios.forEach((audio) => {
+            
+            if (audio.id === img.id) {
+                audio.currentTime = 0;
+                audio.play()
+            }
+            else if (audio.id === img.id) {
+                audio.currentTime = 0;
+                audio.play()
+            } 
+            else if (audio.id === img.id) {
+                audio.currentTime = 0;
+                audio.play()
+            }
+            if (cpuScore === 5){
+                if (audio.id === "gameOver") {
+                    audio.play()
+                }
+            }
+            if (playerScore === 5){
+                if (audio.id === "success") {
+                    audio.play()
+                }   
+            }
+        })
+
+
+})
+})
