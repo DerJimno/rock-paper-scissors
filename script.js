@@ -49,12 +49,9 @@ function roundResult(computerSelection, playerSelection) {
         playerScore++;
         youChoice.style = "transform: scale(1.6); transition: 1s ;";
         cpuChoice.style = "transform: scale(1.0); transition: 1s ;";
-        score.textContent = "{{{You win, Paper is key! }}}";}
-
-        
+        score.textContent = "{{{You win, Paper is key! }}}";
+    }
 }
-
-
 
 const imgs = document.querySelectorAll('.selection')
 
@@ -104,54 +101,41 @@ else if (playerScore === 5){
         
 }
 const youChoice = document.querySelector(".youChoice")
- if (img.id === "Paper") {
-     youChoice.src = "icons/paper.png"
- }
- else if (img.id === "Rock") {
-     youChoice.src = "icons/rock.png"
- }
- if (img.id === "Scissors") {
-     youChoice.src = "icons/scissors.png"
- }
+    if (img.id === "Paper") {
+        youChoice.src = "icons/paper.png"}
+    else if (img.id === "Rock") {
+        youChoice.src = "icons/rock.png"}
+    else {
+        youChoice.src = "icons/scissors.png"
+    }
 
 const cpuChoice = document.querySelector(".cpuChoice")
- if (computerSelection === "Paper") {
-     cpuChoice.src = "icons/paper.png"
- }
- else if (computerSelection === "Rock") {
-     cpuChoice.src = "icons/rock.png"
- }
- if (computerSelection === "Scissors") {
-     cpuChoice.src = "icons/scissors.png"
- }
+    if (computerSelection === "Paper") {
+        cpuChoice.src = "icons/paper.png"}
 
- const audios = document.querySelectorAll('audio')
-        audios.forEach((audio) => {
+    else if (computerSelection === "Rock") {
+        cpuChoice.src = "icons/rock.png"}
+
+    else {
+        cpuChoice.src = "icons/scissors.png"}
+
+const audios = document.querySelectorAll('audio')
+    audios.forEach((audio) => {
             
-            if (audio.id === img.id) {
+        if (audio.id === img.id) {
                 audio.currentTime = 0;
                 audio.play()
-            }
-            else if (audio.id === img.id) {
-                audio.currentTime = 0;
-                audio.play()
-            } 
-            else if (audio.id === img.id) {
-                audio.currentTime = 0;
+        }
+        if (cpuScore === 5){
+            if (audio.id === "gameOver") {
                 audio.play()
             }
-            if (cpuScore === 5){
-                if (audio.id === "gameOver") {
-                    audio.play()
-                }
-            }
-            if (playerScore === 5){
-                if (audio.id === "success") {
-                    audio.play()
-                }   
-            }
-        })
-
-
+        }
+        if (playerScore === 5){
+            if (audio.id === "success") {
+                audio.play()
+            }   
+        }
+    })
 })
 })
